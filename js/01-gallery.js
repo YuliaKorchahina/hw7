@@ -8,14 +8,16 @@ console.log(galleryEl);
 const list = galleryItems
   .map(
     (galleryItems) =>
-      `<a class="gallery__link" href='${galleryItems.original}'>
+      `<div class="gallery__item">
+      <a class="gallery__link" href='${galleryItems.original}'>
     <img
     class="gallery__image" 
     src='${galleryItems.preview}'
     alt='${galleryItems.description}' width="340"
     data-source='${galleryItems.original}'
     />
-    </a>`
+    </a>
+    </div>`
   )
   .join(" ");
 
