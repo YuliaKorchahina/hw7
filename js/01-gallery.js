@@ -20,16 +20,16 @@ const list = galleryItems
   .join(" ");
 
 galleryEl.insertAdjacentHTML("afterbegin", list);
-//------------------------------------style------------------------------------
-galleryEl.style.display = "flex";
-galleryEl.style.listStyle = "none";
-galleryEl.style.justifyContent = "center";
-galleryEl.style.flexWrap = "wrap";
-// ------------------------------------2------------------------------------
+
 galleryEl.addEventListener("click", onClick);
-function onClick (event) {
+function onClick(event) {
   event.preventDefault();
-  console.log(event.target);
-  console.log(event.currentTarget);
- 
-};
+  const originalSize = event.target.getAttribute("data-source");
+  //console.log(event.currentTarget);
+
+  const instance = basicLightbox.create(`
+  <img src="${originalSize}">
+  `);
+
+  instance.show();
+}
