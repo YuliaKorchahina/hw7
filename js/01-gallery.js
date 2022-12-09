@@ -27,8 +27,6 @@ galleryEl.addEventListener("click", onClick);
 function onClick(event) {
   event.preventDefault();
   const originalSize = event.target.getAttribute("data-source");
-  //console.log(event.currentTarget);
-
   const instance = basicLightbox.create(`
   <img src="${originalSize}">
   `);
